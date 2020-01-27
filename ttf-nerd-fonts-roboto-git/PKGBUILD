@@ -1,0 +1,16 @@
+pkgname=ttf-nerd-fonts-roboto-git
+pkgver=0.1
+pkgrel=1
+pkgdesc="Patched Roboto Fonts with Nerd Fonts Patcher"
+arch=("any")
+url="https://github.com/itzXian/nerd-fonts"
+license=("MIT")
+depends=("fontconfig")
+provides=("ttf-nerd-fonts-roboto-git")
+source=("${url}/releases//download/v${pkgver}/${pkgname}.tar.gz")
+
+package() {
+  install -m755 -d "${pkgdir}/usr/share/fonts/${pkgname}/"
+  install -Dm644 *.ttf "${pkgdir}/usr/share/fonts/${pkgname}"
+}
+md5sums=('3ca08f39ff21a6e9bd0ca0b1bd6f4141')

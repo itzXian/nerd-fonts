@@ -1,0 +1,16 @@
+pkgname=ttf-nerd-fonts-hurmit-git
+pkgver=0.1
+pkgrel=1
+pkgdesc="Patched Hermit Fonts with Nerd Fonts Patcher"
+arch=("any")
+url="https://github.com/itzXian/nerd-fonts"
+license=("MIT")
+depends=("fontconfig")
+provides=("ttf-nerd-fonts-hurmit-git")
+source=("${url}/releases//download/v${pkgver}/${pkgname}.tar.gz")
+
+package() {
+  install -m755 -d "${pkgdir}/usr/share/fonts/${pkgname}/"
+  install -Dm644 *.ttf "${pkgdir}/usr/share/fonts/${pkgname}"
+}
+md5sums=('af2a1306c7b78aa235e6b0853a6884a0')
